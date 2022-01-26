@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Orchestra\Testbench\TestCase;
 
-class basicTest extends TestCase
+class BasicTest extends TestCase
 {
     protected $loadEnvironmentVariables = true;
 

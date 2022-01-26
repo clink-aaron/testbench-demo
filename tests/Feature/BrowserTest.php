@@ -4,17 +4,12 @@ namespace Tests\Feature;
 
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Illuminate\Support\Facades\Route;
 
 class BrowserTest extends \Orchestra\Testbench\Dusk\TestCase
 {
     protected static $baseServeHost = 'testbench';
     protected static $baseServePort = 8000;
     protected $loadEnvironmentVariables = true;
-
-//    public static function prepare()
-//    {
-//    }
 
     protected function driver(): RemoteWebDriver
     {
@@ -26,7 +21,6 @@ class BrowserTest extends \Orchestra\Testbench\Dusk\TestCase
     protected function defineRoutes($router)
     {
         $router->get('/hi', fn() => 'hello');
-        $router->getRoutes()->refreshNameLookups();
     }
 
     public function testRoute()
@@ -42,8 +36,7 @@ class BrowserTest extends \Orchestra\Testbench\Dusk\TestCase
         $this->browse(function ($browser) {
             $browser->visit('/hi')
                 ->screenshot('hello')
-                ->assertSee('hello')
-                ->assertPathIs('/hi');
+                ->assertSee('hello');
         });
     }
 }

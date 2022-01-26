@@ -1,0 +1,22 @@
+{
+    "name": "cl/duskbug",
+    "description": "example of testbench-dusk bug",
+    "type": "library",
+    "license": "",
+    "require": {
+        "php": ">=7.4",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "6.*",
+        "phpunit/phpunit": "5 - 9",
+        "orchestra/testbench-dusk": "^6.24"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
